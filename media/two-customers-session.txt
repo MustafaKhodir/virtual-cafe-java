@@ -1,0 +1,112 @@
+Real run of the Barista server with two customers, Alice and Bob, ordering at the same time.
+Brew times are the real ones: 30 s for a tea, 45 s for a coffee.
+
+=== Customer: Alice ===
+Message from server: Please enter your name:
+Message from server: Hello Alice, how are you? Enter a command.
+Order sent: 1 tea(s) and 1 coffee(s).
+Message from server: Order received for Alice (1 teas and 1 coffees)
+Requested order status from server.
+Message from server: Order status for Alice:
+- tea is brewing, about 26 seconds left.
+- coffee is brewing, about 41 seconds left.
+Order status: Order delivered to Alice (1 teas and 1 coffees)
+Goodbye!
+
+=== Customer: Bob ===
+Message from server: Please enter your name:
+Message from server: Hello Bob, how are you? Enter a command.
+Message from server: Order received for Bob (2 teas and 0 coffees)
+Order sent: 2 tea(s) and 0 coffee(s).
+Requested order status from server.
+Message from server: Order status for Bob:
+- 1 teas and 0 coffees in waiting area.
+- tea is brewing, about 25 seconds left.
+Goodbye!
+
+=== Barista server ===
+Barista server is running on port 8080
+Successfully connected client: Alice
+Current state:
+  clients in cafe: 1
+  clients waiting for orders: 0
+  cups in waiting area: 0
+  cups in brewing area: 0 (0 tea, 0 coffee)
+  cups in tray area: 0
+
+Successfully connected client: Bob
+Current state:
+  clients in cafe: 2
+  clients waiting for orders: 0
+  cups in waiting area: 0
+  cups in brewing area: 0 (0 tea, 0 coffee)
+  cups in tray area: 0
+
+[Request from Alice] order
+Order for 1 tea and 1 coffee from Alice
+Started brewing a tea for Alice
+Started brewing a coffee for Alice
+Current state:
+  clients in cafe: 2
+  clients waiting for orders: 1
+  cups in waiting area: 0
+  cups in brewing area: 2 (1 tea, 1 coffee)
+  cups in tray area: 0
+
+[Request from Bob] order
+Order for 2 tea and 0 coffee from Bob
+Started brewing a tea for Bob
+Current state:
+  clients in cafe: 2
+  clients waiting for orders: 2
+  cups in waiting area: 1
+  cups in brewing area: 3 (2 tea, 1 coffee)
+  cups in tray area: 0
+
+[Request from Alice] status
+[Request from Bob] status
+Done brewing a tea for Alice, took 30000 millis
+Started brewing a tea for Bob
+Current state:
+  clients in cafe: 2
+  clients waiting for orders: 2
+  cups in waiting area: 0
+  cups in brewing area: 3 (2 tea, 1 coffee)
+  cups in tray area: 1
+
+Done brewing a tea for Bob, took 30000 millis
+Current state:
+  clients in cafe: 2
+  clients waiting for orders: 2
+  cups in waiting area: 0
+  cups in brewing area: 2 (1 tea, 1 coffee)
+  cups in tray area: 2
+
+[Request from Bob] exit
+Discarded a tea originally for Bob
+Client left: Bob
+Current state:
+  clients in cafe: 1
+  clients waiting for orders: 1
+  cups in waiting area: 0
+  cups in brewing area: 2 (1 tea, 1 coffee)
+  cups in tray area: 1
+
+Done brewing a coffee for Alice, took 45000 millis
+Delivered order to Alice
+Current state:
+  clients in cafe: 1
+  clients waiting for orders: 0
+  cups in waiting area: 0
+  cups in brewing area: 1 (1 tea, 0 coffee)
+  cups in tray area: 0
+
+[Request from Alice] exit
+Client left: Alice
+Current state:
+  clients in cafe: 0
+  clients waiting for orders: 0
+  cups in waiting area: 0
+  cups in brewing area: 1 (1 tea, 0 coffee)
+  cups in tray area: 0
+

@@ -1,3 +1,5 @@
+<sub>Copyright 2026 Mustafa Khodir. All rights reserved. Photos, videos and designs may not be reused without permission.</sub>
+
 # Virtual Cafe: a Multi Client Java Server
 
 A cafe simulation in Java where one Barista server takes drink orders from any number of Customer clients at the same time. Customers connect over TCP, type orders in plain English, and get told when their drinks are ready. The barista can only brew two teas and two coffees at once, so orders queue up and get worked through in the order they arrived.
@@ -102,10 +104,11 @@ Next I would add customer authentication, write the server log to a JSON file, a
 
 ## Source code
 
-The full source code is kept in a private repository. To review it, [email me](mailto:mkhodir77@gmail.com?subject=Code%20access%3A%20virtual-cafe-java) with your name, company and GitHub username, and I will give you read access.
+The source code is private. Selected parts are available to employers for technical review. Contact me at [mkhodir77@gmail.com](mailto:mkhodir77@gmail.com).
 
 ## What's in this repo
 
+- `outline/` outline files for the main programs: function names, structure and comments only. The working logic is in the private repository.
 - `media/` the terminal image and the full log of a real two customer run.
 - `media/demo/` the demo recordings, GIFs to watch here and one MP4 with captions.
 
@@ -123,4 +126,4 @@ The same video is in the repo as [virtual-cafe-demo.mp4](media/demo/virtual-cafe
 
 The full project report is available on request.
 
-Copyright 2026 Mustafa Khodir. All rights reserved.
+Copyright 2026 Mustafa Khodir. All rights reserved. Photos, videos and designs may not be reused without permission.

@@ -1,5 +1,3 @@
-<sub>Copyright 2026 Mustafa Khodir. All rights reserved. Photos, videos and designs may not be reused without permission.</sub>
-
 # Virtual Cafe: a Multi Client Java Server
 
 A cafe simulation in Java where one Barista server takes drink orders from any number of Customer clients at the same time. Customers connect over TCP, type orders in plain English, and get told when their drinks are ready. The barista can only brew two teas and two coffees at once, so orders queue up and get worked through in the order they arrived.
